@@ -20,6 +20,7 @@ namespace LongitudeOne\Spatial\DBAL\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\MySQLPlatform;
+use Doctrine\DBAL\Platforms\MariaDBPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
 use Doctrine\DBAL\Types\Exception\TypeNotRegistered;
 use Doctrine\DBAL\Types\Type;
@@ -242,7 +243,7 @@ abstract class AbstractSpatialType extends Type implements DoctrineSpatialTypeIn
      */
     private function getSpatialPlatform(AbstractPlatform $platform): PlatformInterface
     {
-        if ($platform instanceof MySQLPlatform) {
+        if ($platform instanceof MySQLPlatform || $platform instanceof MariaDBPlatform) {
             return new MySql();
         }
 

@@ -132,9 +132,9 @@ abstract class AbstractPlatform implements PlatformInterface
      */
     public function getMappedDatabaseTypes(AbstractSpatialType $type): array
     {
-        if (!$type->supportsPlatform($this)) {
-            throw new UnsupportedTypeException(sprintf('Platform %s does not currently supported the type %s.', $this::class, $type::class));
-        }
+//        if (!$type->supportsPlatform($this)) {
+//            throw new UnsupportedTypeException(sprintf('Platform %s does not currently supported the type %s.', $this::class, $type::class));
+//        }
 
         $sqlType = mb_strtolower($type->getSQLType());
 

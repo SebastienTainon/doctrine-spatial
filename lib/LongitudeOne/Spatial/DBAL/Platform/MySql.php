@@ -42,9 +42,9 @@ class MySql extends AbstractPlatform
      */
     public function convertToDatabaseValue(AbstractSpatialType $type, SpatialInterface $value): string
     {
-        if (!$type->supportsPlatform($this)) {
-            throw new UnsupportedTypeException(sprintf('Platform %s is not currently supported.', $this::class));
-        }
+//        if (!$type->supportsPlatform($this)) {
+//            throw new UnsupportedTypeException(sprintf('Platform %s is not currently supported.', $this::class));
+//        }
 
         return sprintf('%s(%s)', mb_strtoupper($value->getType()), $value);
     }
